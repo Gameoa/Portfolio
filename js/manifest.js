@@ -1,0 +1,19 @@
+/* ================================================================
+   PROJECT MANIFEST
+   ----------------------------------------------------------------
+   Every page loads projects by reading this list and injecting a
+   <script> tag for each file. To add a new project:
+
+     1. Copy any file in /projects/ and edit its fields
+        (see the comment at the top of /projects/_template.js).
+     2. Add its filename to the PROJECT_FILES array below.
+
+   That's it — every page (home, showcase, timeline, categories,
+   subprojects) picks it up automatically, no other files to touch.
+================================================================ */
+
+const PROJECT_FILES = [
+  "projects/663A_ChangeUp.js",
+  "projects/663A_TippingPoint.js",
+  "projects/663A_TurningPoint.js",
+];

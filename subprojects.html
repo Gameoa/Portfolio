@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sub-projects — Jordan Ellis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body>
+
+<div class="reg reg--tl"></div><div class="reg reg--tr"></div><div class="reg reg--bl"></div><div class="reg reg--br"></div>
+
+<header class="titlebar">
+  <div class="wrap">
+    <a class="titlebar-name" href="index.html">Jordan Ellis</a>
+    <div class="titlebar-meta">
+      <nav class="nav" id="nav">
+        <a href="index.html">Home</a>
+        <a href="showcase.html">Showcase</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="categories.html">Categories</a>
+        <a href="subprojects.html" class="current">Sub-projects</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">≡</button>
+    </div>
+  </div>
+</header>
+
+<section class="page-header">
+  <div class="wrap">
+    <div class="page-kicker field-label">Smaller pieces of larger work</div>
+    <h1>Sub-projects</h1>
+    <p>Components, tools, and side-builds that belong under a larger project. Click one to jump to its parent project.</p>
+  </div>
+</section>
+
+<section class="section" style="border-bottom:none;">
+  <div class="wrap">
+    <div class="grid grid--2" id="subGrid"><div class="empty-state">Loading projects…</div></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <span>© <span id="year"></span> Jordan Ellis</span>
+    <span>Built with plain HTML, CSS &amp; JS — no framework required</span>
+  </div>
+</footer>
+
+<script src="js/manifest.js"></script>
+<script src="js/loader.js"></script>
+<script src="js/render.js"></script>
+<script src="js/page-subprojects.js"></script>
+</body>
+</html>
