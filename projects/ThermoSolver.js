@@ -4,15 +4,15 @@ PROJECTS.push({
   category: "Software",
   year: 2022,
   role: "Personal Project",
-  desc: "Lightweight ",
+  desc: "Lightweight Solver for Thermodynamics equations of state using IAPWS-95 standard. Also designed for configuring and solving thermodynamics cycles.",
   tags: ["Under Development", "C++", "SFML"],
   image: null,
   model: null,
   featured: false,
 
-  problem: "",
-  approach: "Design and program an easy to use, lightweight, interactive physics simulator ideal for classroom or student use.",
-  result: "Simple collision interactions, objects, and GUI. ONGOING DEVELOPMENT.",
+  problem: "No easily accesible tools for analyzing simple thermodynamics equations of state and cycles exists especially for students.",
+  approach: "Design a lightweight, easy to use C++ program that prioritizes simplicity and functionality for students while making clear processes and computations happening behind the scenes.",
+  result: "Testing simple IAPWS-95 formulation in C++ and validating with known table values. ONGOING DEVELOPMENT.",
 
   subprojects: [],
 

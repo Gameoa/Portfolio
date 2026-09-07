@@ -6,7 +6,7 @@ PROJECTS.push({
   role: "Personal Project",
   desc: "A small rigid-body physics engine built from scratch in C++ to test mechanism designs and validate physical interactions before modelling them.",
   tags: ["Under Development", "C++", "SFML"],
-  image: null,
+  image: "images/PhySim/PhySim_Thumbnail.png",
   model: null,
   featured: false,
 
@@ -17,6 +17,7 @@ PROJECTS.push({
   subprojects: [],
 
   links: [
-    { label: "Repository", url: "https://github.com/Gameoa/PhySim" }
+    { label: "Repository", url: "https://github.com/Gameoa/PhySim" },
+    { label: "Development Videos", url: "https://youtube.com/playlist?list=PLMSK7cBPnDNE&si=c6_C5zTeZbUeb7Xr"}
   ]
 });

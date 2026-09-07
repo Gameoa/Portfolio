@@ -7,7 +7,7 @@ PROJECTS.push({
   role: "Lead Designer, Builder, Strategist, and Programmer",
   desc: "A Robot built for the 2018-19 Vex Robotics Turning Point competition",
   tags: ["Lift", "Mechanical", "Software", "High School"],
-  image: null,                      // or "images/my-project.jpg" once you have a real photo
+  image: "images/663ATurningPoint/663ATP_Thumbnail.png",                      // or "images/my-project.jpg" once you have a real photo
   model: null,                      // or "models/my-project.glb" for an interactive 3D viewer —
                                      // see README.md for export tips. Animation buttons appear
                                      // automatically if the file has animation clips.
@@ -25,6 +25,7 @@ PROJECTS.push({
 
   // Optional. Delete any you don't need.
   links: [
-    // { label: "Repository", url: "https://github.com/yourusername/my-project" }
+    { label: "Reveal Video", url: "https://youtu.be/yYyONbt0ypY?si=sP8WFLDtm8XgttFA" },
+    { label: "Autonomous Demonstration", url: "https://youtu.be/xOEhEK4dzy0?si=2L__xlMzU_4lU6hB" }
   ]
 });

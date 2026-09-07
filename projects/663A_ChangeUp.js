@@ -19,7 +19,9 @@ PROJECTS.push({
   desc: "A robot built for the 2020-21 Vex Robotics Change Up competition",
   tags: ["Roller", "Mechanical", "Software"],
   image: null,                      // or "images/my-project.jpg" once you have a real photo
-  images: ["images/663AChangeUp/663ACU_Unit5_Render2.png", "images/663AChangeUp/663ACU_Unit5_Render1.png"], // or "images/my-project.jpg" once you have a real photo
+  images: ["images/663AChangeUp/663ACU_Thumbnail.png",
+    "images/663AChangeUp/663ACU_Unit5_Render2.png", 
+    "images/663AChangeUp/663ACU_Unit5_Render1.png"], // or "images/my-project.jpg" once you have a real photo
   model: null,                      // or "models/my-project.glb" for an interactive 3D viewer —
                                      // see README.md for export tips. Animation buttons appear
                                      // automatically if the file has animation clips.
@@ -37,6 +39,7 @@ PROJECTS.push({
 
   // Optional. Delete any you don't need.
   links: [
-    { label: "Reveal Video", url: "https://youtu.be/_u9m0OijIUM?si=xU2moIZiAvvTJePT" }
+    { label: "Reveal Video", url: "https://youtu.be/_u9m0OijIUM?si=xU2moIZiAvvTJePT" },
+    { label: "Autonomous Testing", url: "https://youtu.be/ExdDNTMkVt4?si=LNuTV3nPXD1d5_EV" }
   ]
 });

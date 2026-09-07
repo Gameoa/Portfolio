@@ -9,8 +9,11 @@ PROJECTS.push({
   tags: ["Mechanical", "Software", "GA Tech"],
   //image: "images/ME2110Robot/ME2110Robot_MainImage.png", // or "images/my-project.jpg" once you have a real photo
   image: null,
-  images: ["images/ME2110Robot/ME2110Robot_MainImage.png", "images/ME2110Robot/ME2110Robot_ExtensionImage.png", "images/ME2110Robot/ME2110Robot_LiftImage.png", "images/ME2110Robot/ME2110Robot_KoopaImage.png"], // or "images/my-project.jpg" once you have a real photo
-  model: null,                      // or "models/my-project.glb" for an interactive 3D viewer —
+  images: ["./images/ME2110Robot/ME2110Robot_MainImage.png", 
+    "./images/ME2110Robot/ME2110Robot_ExtensionImage.png", 
+    "./images/ME2110Robot/ME2110Robot_LiftImage.png", 
+    "./images/ME2110Robot/ME2110Robot_KoopaImage.png"], // or "images/my-project.jpg" once you have a real photo
+  model: "models/ME2110_FinalRobot.glb",                      // or "models/my-project.glb" for an interactive 3D viewer —
                                      // see README.md for export tips. Animation buttons appear
                                      // automatically if the file has animation clips.
   featured: false,                  // true = shown on the homepage's featured strip
@@ -27,6 +30,7 @@ PROJECTS.push({
 
   // Optional. Delete any you don't need.
   links: [
-    { label: "Repository", url: "https://github.com/Gameoa/ME2110Winners" }
+    { label: "Repository", url: "https://github.com/Gameoa/ME2110Winners" },
+    { label: "Competition Video", url: "https://youtu.be/Z0BACqOM2iA?si=RHMOzV0rOkGVlZsv" }
   ]
 });
