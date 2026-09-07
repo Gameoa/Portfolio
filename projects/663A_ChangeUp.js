@@ -26,7 +26,7 @@ PROJECTS.push({
 
   problem: "Make a robot that can pick up and shoot balls into specified goals while also being able to counter opponent robots physically and strategically",
   approach: "Designed, built, and programmed an lightweight and agile robot that could efficiently pick up and score balls while also being able to push larger opponents and quickly navigate around them",
-  result: "Placed high in TN State competition and qualified for the World Championship, which was done virtually due to COVID-19",
+  result: "Placed high in TN State competition and qualified for the World Championship",
 
   // Optional. Smaller pieces of work that belong under this project.
   // Shown in this project's detail view AND flattened onto subprojects.html.
@@ -36,6 +36,6 @@ PROJECTS.push({
 
   // Optional. Delete any you don't need.
   links: [
-    // { label: "Repository", url: "https://github.com/yourusername/my-project" }
+    { label: "Reveal Video", url: "https://youtu.be/_u9m0OijIUM?si=xU2moIZiAvvTJePT" }
   ]
 });

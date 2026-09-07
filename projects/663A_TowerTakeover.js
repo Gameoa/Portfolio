@@ -14,9 +14,9 @@ PROJECTS.push({
   title: "663A Tower Takeover Robot",
   category: "VRC Robotics",             // reuse an existing category or invent a new one —
                                      // filter chips and category pages update automatically
-  year: 2019,                       // used for sorting on the timeline page
+  year: 2020,                       // used for sorting on the timeline page
   role: "Lead Designer, Builder, Strategist, and Programmer",
-  desc: "A Robot built for the 2018-19 Vex Robotics Turning Point competition",
+  desc: "A Robot built for the 2019-20 Vex Robotics Tower Takeover competition",
   tags: ["Mechanical", "Software", "High School"],
   image: null,                      // or "images/my-project.jpg" once you have a real photo
   model: null,                      // or "models/my-project.glb" for an interactive 3D viewer —
@@ -36,6 +36,7 @@ PROJECTS.push({
 
   // Optional. Delete any you don't need.
   links: [
-    // { label: "Repository", url: "https://github.com/yourusername/my-project" }
+    { label: "Robot Explanation", url: "https://youtu.be/ESet7QWwRd8?si=btnCw11zenHrveOS" },
+    { label: "Competition Video", url: "https://youtu.be/c_WKpKeEz8k?si=UbSfWFpIZUwpryck" }
   ]
 });
