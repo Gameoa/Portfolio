@@ -19,6 +19,7 @@ PROJECTS.push({
   desc: "A robot built for the 2021-22 Vex Robotics Tipping Point competition. Designed for quick defensive play and prioritized mobile goal scoring and possession.",
   tags: ["Transmission", "Mechanical", "Software", "High School"],
   image: null,                      // or "images/my-project.jpg" once you have a real photo
+  images: ["images/663ATippingPoint/663ATiP_Showcase.png", "images/663ATippingPoint/663ATiP_Classroom.png", "images/663ATippingPoint/663ATiP_Comp.png", "images/663ATippingPoint/663ATiP_Transmission.png", "images/663ATippingPoint/663ATiP_RearLift.png"], // or "images/my-project.jpg" once
   model: null,                      // or "models/my-project.glb" for an interactive 3D viewer —
                                      // see README.md for export tips. Animation buttons appear
                                      // automatically if the file has animation clips.
@@ -31,7 +32,7 @@ PROJECTS.push({
   // Optional. Smaller pieces of work that belong under this project.
   // Shown in this project's detail view AND flattened onto subprojects.html.
   subprojects: [
-    { title: "Lift-Drive PTO Transmission", desc: "Transmission system between the Lift and Drive system to allocate 2 additional motors for maximum pushing power when active lift control wasn't needed." }
+    { title: "Lift-Drive PTO Transmission", desc: "Transmission system between the Lift and Drive system to allocate 2 additional motors for maximum pushing power when active lift control wasn't needed." },
     { title: "Break-Away Locking Claw", desc: "Unique pneumatic claw linkage design 'breaks away' when powered forming a locking tooth which prevents opening until unpowered" }
   ],
 

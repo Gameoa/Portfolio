@@ -8,8 +8,9 @@ PROJECTS.push({
   desc: "A robot built for the GA Tech ME2110 course to demonstrate the principles of mechanical engineering and robotics through a hands on peer-to-peer competition",
   tags: ["Mechanical", "Software", "GA Tech"],
   //image: "images/ME2110Robot/ME2110Robot_MainImage.png", // or "images/my-project.jpg" once you have a real photo
-  images: ["images/ME2110Robot/ME2110Robot_MainImage.png", "images/ME2110Robot/ME2110Robot_ExtensionImage.png"],
-  model: "models/ME2110_FinalRobot.glb",                      // or "models/my-project.glb" for an interactive 3D viewer —
+  image: null,
+  images: ["images/ME2110Robot/ME2110Robot_MainImage.png", "images/ME2110Robot/ME2110Robot_ExtensionImage.png", "images/ME2110Robot/ME2110Robot_LiftImage.png", "images/ME2110Robot/ME2110Robot_KoopaImage.png"], // or "images/my-project.jpg" once you have a real photo
+  model: "models/FLDrivePodV3.glb",                      // or "models/my-project.glb" for an interactive 3D viewer —
                                      // see README.md for export tips. Animation buttons appear
                                      // automatically if the file has animation clips.
   featured: false,                  // true = shown on the homepage's featured strip

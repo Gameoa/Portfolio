@@ -284,7 +284,7 @@ function buildModelViewer(container, p){
   mv.setAttribute("camera-controls", "");
   mv.setAttribute("auto-rotate", "");
   mv.setAttribute("shadow-intensity", "1");
-  mv.setAttribute("exposure", "0.9");
+  mv.setAttribute("exposure", "0.6");
   mv.setAttribute("touch-action", "pan-y");
   container.appendChild(mv);
 
