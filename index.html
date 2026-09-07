@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lincoln Stanfield — 4th Year Engineer &amp; Mechanical Engineer</title>
+<script>(function(){try{var t=localStorage.getItem("theme")||((window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light");document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<title data-page-prefix="">Lincoln Stanfield — 4th Year Engineer &amp; Mechanical Engineer</title>
 <meta name="description" content="Portfolio of mechanical and robotics engineering work.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,8 +18,9 @@
 
 <header class="titlebar">
   <div class="wrap">
-    <a class="titlebar-name" href="index.html">Lincoln Stanfield</a>
+    <a class="titlebar-name" href="index.html" data-site="name">Your Name</a>
     <div class="titlebar-meta">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">DARK MODE</button>
       <nav class="nav" id="nav">
         <a href="index.html" class="current">Home</a>
         <a href="showcase.html">Showcase</a>
@@ -35,22 +37,14 @@
 
 <section class="hero">
   <div class="wrap">
-    <div class="hero-kicker field-label">Mechanical Engineer — Based in Atlanta, GA</div>
-    <h1>Mechanical Engineer</h1><!--please put something better here-->
-    <p class="hero-sub">
-      A collection of personal mechanical, electrical, and software projects that I've built over the years. 
-      Special focus on robotics and automation applications.
-    </p>
+    <div class="hero-kicker field-label" data-site="kicker">Role — Based in Location</div>
+    <h1 data-site="headline">Headline</h1>
+    <p class="hero-sub" data-site="pitch">One or two sentences pulled from js/site.js.</p>
     <div class="hero-actions">
-      <a class="btn btn--primary" href="resume.pdf" download>Download résumé</a>
+      <a class="btn btn--primary" href="resume.pdf" download data-site="resume-link">Download résumé</a>
       <a class="btn" href="showcase.html">See all work</a>
     </div>
-    <div class="spec-row">
-      <div class="spec"><div class="spec-value" data-count="9">0</div><div class="spec-label field-label">Projects shipped</div></div>
-      <div class="spec"><div class="spec-value" data-count="4">0</div><div class="spec-label field-label">Years building</div></div>
-      <div class="spec"><div class="spec-value mono" style="font-size:20px; padding-top:4px;">CAD / C++</div><div class="spec-label field-label">Core stack</div></div>
-      <div class="spec"><div class="spec-value mono" style="font-size:20px; padding-top:4px;">OPEN TO NEW OPPORTUNITIES</div><div class="spec-label field-label">Status</div></div>
-    </div>
+    <div class="spec-row" data-site="stats"></div>
   </div>
 </section>
 
@@ -72,14 +66,8 @@
     <div class="section-head"><h2>About</h2><span class="section-number mono">02</span></div>
     <div class="about-grid">
       <div class="about-portrait">PHOTO OR<br>LINE-DRAWING<br>PLACEHOLDER</div>
-      <div class="about-body">
-        <p>Write two or three short paragraphs here about your background — what kind of engineer you are, what you like building, and what you're looking for next. Keep sentences plain and specific: what you've shipped, what tools you reach for, and what problem space you enjoy.</p>
-        <p>Second paragraph: mention your education, past roles, or a project that best represents how you work. Employers skim this section, so lead with the most relevant sentence.</p>
-        <div class="skills">
-          <span class="skill">SolidWorks</span><span class="skill">Fusion 360</span><span class="skill">Autodesk Inventor</span>
-          <span class="skill">Creo 9</span><span class="skill">C++</span><span class="skill">Python</span>
-          <span class="skill">GD&amp;T</span><span class="skill">Design for Machining</span>
-        </div>
+      <div class="about-body" data-site="bio">
+        <div class="skills" data-site="skills"></div>
       </div>
     </div>
   </div>
@@ -89,25 +77,20 @@
   <div class="wrap">
     <div class="section-head"><h2>Get in touch</h2><span class="section-number mono">03</span></div>
     <div class="contact-row">
-      <p style="max-width:44ch; color:var(--muted); font-size:16px;">Looking for collaborators, freelance builds, or full-time roles in robotics and mechanical design. The fastest way to reach me is email.</p>
-      <div class="contact-links">
-        <a href="mailto:lincoln@example.com">lincoln@example.com</a>
-        <a href="https://www.youtube.com/@gameoa1163" target="_blank" rel="noopener">Youtube</a>
-        <a href="https://github.com/gameoa" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.linkedin.com/in/lincoln-stanfield-770791348/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="resume.pdf" download>Résumé (PDF)</a>
-      </div>
+      <p style="max-width:44ch; color:var(--muted); font-size:16px;" data-site="contact-blurb"></p>
+      <div class="contact-links" data-site="contact-links"></div>
     </div>
   </div>
 </section>
 
 <footer class="footer">
   <div class="wrap">
-    <span>© <span id="year"></span> Lincoln Stanfield</span>
+    <span>© <span id="year"></span> <span data-site="name">Your Name</span></span>
     <span>Built with plain HTML, CSS &amp; JS — no framework required</span>
   </div>
 </footer>
 
+<script src="js/site.js"></script>
 <script src="js/manifest.js"></script>
 <script src="js/loader.js"></script>
 <script src="js/render.js"></script>

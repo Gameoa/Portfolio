@@ -18,7 +18,13 @@ PROJECTS.push({
   role: "Your Role",
   desc: "One sentence shown on the card.",
   tags: ["Tool", "Tool", "Tool"],
-  image: null,                      // or "images/my-project.jpg" once you have a real photo
+  image: null,                      // deprecated in favor of "images" below, but still
+                                     // supported as a thumbnail-only fallback
+  images: [],                       // e.g. ["images/my-project-1.jpg", "images/my-project-2.jpg"]
+                                     // First entry is used as the card thumbnail. Two or more
+                                     // shows a "gallery" badge and an in-modal photo viewer with
+                                     // prev/next + thumbnail strip. If a "model" is also set,
+                                     // the modal shows a Photos/3D Model tab switcher.
   model: null,                      // or "models/my-project.glb" for an interactive 3D viewer —
                                      // see README.md for export tips. Animation buttons appear
                                      // automatically if the file has animation clips.

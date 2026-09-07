@@ -12,12 +12,12 @@
 PROJECTS.push({
   id: "663A_ChangeUp",                 // unique, url-safe (used for filters + shareable ?open= links)
   title: "663A Change Up Robot",
-  category: ["High School", "Robotics"],             // reuse an existing category or invent a new one —
+  category: "VRC Robotics",             // reuse an existing category or invent a new one —
                                      // filter chips and category pages update automatically
-  year: 2021,                       // used for sorting on the timeline page
+  year: 2020,                       // used for sorting on the timeline page
   role: "Lead Designer, Builder, Strategist, and Programmer",
   desc: "A robot built for the 2020-21 Vex Robotics Change Up competition",
-  tags: ["Tool", "Tool", "Tool"],
+  tags: ["Roller", "Mechanical", "Software"],
   image: null,                      // or "images/my-project.jpg" once you have a real photo
   model: null,                      // or "models/my-project.glb" for an interactive 3D viewer —
                                      // see README.md for export tips. Animation buttons appear
@@ -26,7 +26,7 @@ PROJECTS.push({
 
   problem: "Make a robot that can pick up and shoot balls into specified goals while also being able to counter opponent robots physically and strategically",
   approach: "Designed, built, and programmed an lightweight and agile robot that could efficiently pick up and score balls while also being able to push larger opponents and quickly navigate around them",
-  result: "Placed high in State competition and qualified for the World Championship, which was done virtually due to COVID-19",
+  result: "Placed high in TN State competition and qualified for the World Championship, which was done virtually due to COVID-19",
 
   // Optional. Smaller pieces of work that belong under this project.
   // Shown in this project's detail view AND flattened onto subprojects.html.

@@ -1,18 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   initChrome();
 
-  document.querySelectorAll(".spec-value[data-count]").forEach(el => {
-    const target = parseInt(el.dataset.count, 10);
-    let current = 0;
-    const step = Math.max(1, Math.round(target / 24));
-    const tick = () => {
-      current = Math.min(target, current + step);
-      el.textContent = current;
-      if (current < target) requestAnimationFrame(tick);
-    };
-    requestAnimationFrame(tick);
-  });
-
   loadProjects().then(projects => {
     const grid = document.getElementById("featuredGrid");
     grid.innerHTML = "";

@@ -12,8 +12,12 @@
    subprojects) picks it up automatically, no other files to touch.
 ================================================================ */
 
-const PROJECT_FILES = [
-  "projects/663A_ChangeUp.js",
+window.PROJECT_FILES = [
   "projects/663A_TippingPoint.js",
+  "projects/663A_ChangeUp.js",
+  "projects/663A_TowerTakeover.js",
   "projects/663A_TurningPoint.js",
+  "projects/PhySim.js",
+  "projects/ThermoSolver.js",
+  "projects/ME2110Robot.js",
 ];

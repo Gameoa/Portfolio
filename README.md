@@ -13,9 +13,10 @@ subprojects.html      Flattened list of every sub-project, linking back to its p
 
 css/styles.css        One shared stylesheet for every page
 
+js/site.js              Your name, role, contacts, links, bio, skills, hero stats — edit this
 js/manifest.js         List of project files to load — edit this when adding/removing a project
 js/loader.js            Loads each project file and hands back the combined array
-js/render.js            Shared card + modal + 3D viewer logic used by every page
+js/render.js            Shared card + modal + gallery + 3D viewer logic used by every page
 js/page-*.js            One small script per page, just wiring data to that page's layout
 
 projects/*.js           One file per project — this is what you'll actually edit day to day
@@ -24,6 +25,17 @@ projects/_template.js    Copy this to start a new project (not loaded by any pag
 images/                Put project photos here
 models/                Put .glb files here
 ```
+
+## Editing your name, contact info, bio, and hero stats
+
+All of it lives in one place: `js/site.js`. Change your name, role, location,
+resume link, email, social links, bio paragraphs, skills, and the hero's stat
+readout there, and every page picks it up automatically — the title bar name,
+each page's browser-tab title, the homepage hero/about/contact sections, and the
+footer credit all read from this one file. Nothing else needs to be touched.
+
+The hero stat row (`stats` in site.js) accepts any number of entries, each either
+a `count` (animates in as a number on load) or a `text` label (shown as-is).
 
 ## Adding a project
 
@@ -50,6 +62,22 @@ subprojects: [
 These show up in that project's own detail view, and are automatically flattened
 onto `subprojects.html` too.
 
+## Photo galleries
+
+Add an `images` array to any project file:
+
+```js
+images: ["images/my-project-1.jpg", "images/my-project-2.jpg", "images/my-project-3.jpg"]
+```
+
+The first image becomes that project's card thumbnail, and a "N PHOTOS" badge
+appears on the card when there's more than one. In the detail view, all of them
+show in a gallery with prev/next arrows, a thumbnail strip to jump to any photo,
+and left/right arrow-key support.
+
+The older singular `image` field still works as a thumbnail-only fallback if you
+haven't moved a project over to `images` yet.
+
 ## 3D models
 
 Set a project's `model` field to a path or URL for a `.glb` file:
@@ -61,6 +89,12 @@ model: "models/my-project.glb"
 An interactive, orbit-able viewer appears in that project's detail view. If the
 `.glb` has animation clips baked in, playback buttons are generated automatically —
 nothing else to configure.
+
+**Combining photos and a 3D model on the same project:** if a project has both
+`images` and `model`, the detail view shows a small "Photos" / "3D Model" tab
+switcher instead of stacking both — a full gallery plus a 3D canvas at once makes
+for a very tall modal, so this keeps it to one focused view at a time. With only
+one of the two set, that one just shows directly with no tabs.
 
 Most CAD tools export STEP or STL, not glTF. To get a `.glb`: export STL/STEP from
 your CAD software, then convert with Blender (free, File → Export → glTF 2.0) or an
@@ -83,6 +117,8 @@ even just to preview the site on your own machine.
 
 ## Editing things that live only on the homepage
 
-Your name, pitch, bio, skills, and contact links currently live directly in
-`index.html` (they're not project data). Edit them there. Every other page reads
-its `Home`/`About`/`Contact` nav links back to `index.html`.
+The hero pitch/headline, about bio, skills, and contact blurb are all driven by
+`js/site.js` too (see above) — but the *layout* of the About section (the portrait
+placeholder box) and section headings themselves still live directly in
+`index.html`, since those aren't per-field data. Every other page reads its
+`Home`/`About`/`Contact` nav links back to `index.html`.

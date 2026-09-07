@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sub-projects — Jordan Ellis</title>
+<script>(function(){try{var t=localStorage.getItem("theme")||((window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light");document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<title data-page-prefix="Sub-projects">Sub-projects — Your Name</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -16,8 +17,9 @@
 
 <header class="titlebar">
   <div class="wrap">
-    <a class="titlebar-name" href="index.html">Jordan Ellis</a>
+    <a class="titlebar-name" href="index.html" data-site="name">Your Name</a>
     <div class="titlebar-meta">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">DARK MODE</button>
       <nav class="nav" id="nav">
         <a href="index.html">Home</a>
         <a href="showcase.html">Showcase</a>
@@ -48,11 +50,12 @@
 
 <footer class="footer">
   <div class="wrap">
-    <span>© <span id="year"></span> Jordan Ellis</span>
+    <span>© <span id="year"></span> <span data-site="name">Your Name</span></span>
     <span>Built with plain HTML, CSS &amp; JS — no framework required</span>
   </div>
 </footer>
 
+<script src="js/site.js"></script>
 <script src="js/manifest.js"></script>
 <script src="js/loader.js"></script>
 <script src="js/render.js"></script>
