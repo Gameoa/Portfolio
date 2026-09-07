@@ -14,7 +14,7 @@ PROJECTS.push({
   title: "663A Tower Takeover Robot",
   category: "VRC Robotics",             // reuse an existing category or invent a new one —
                                      // filter chips and category pages update automatically
-  year: 2020,                       // used for sorting on the timeline page
+  year: 2019,                       // used for sorting on the timeline page
   role: "Lead Designer, Builder, Strategist, and Programmer",
   desc: "A Robot built for the 2019-20 Vex Robotics Tower Takeover competition",
   tags: ["Mechanical", "Software", "High School"],
