@@ -8,11 +8,14 @@ PROJECTS.push({
   tags: ["Under Development", "C++", "SFML"],
   image: null,
   model: null,
+  badges: [{ text: "Under Dev", tone: "accent" }],
   featured: false,
 
-  problem: "No easily accesible tools for analyzing simple thermodynamics equations of state and cycles exists especially for students.",
-  approach: "Design a lightweight, easy to use C++ program that prioritizes simplicity and functionality for students while making clear processes and computations happening behind the scenes.",
-  result: "Testing simple IAPWS-95 formulation in C++ and validating with known table values. ONGOING DEVELOPMENT.",
+  sections: [
+    { heading: "Problem", body: "No easily accesible tools for analyzing simple thermodynamics equations of state and cycles exists especially for students." },
+    { heading: "Approach", body: "Design a lightweight, easy to use C++ program that prioritizes simplicity and functionality for students while making clear processes and computations happening behind the scenes." },
+    { heading: "Result", body: "Testing simple IAPWS-95 formulation in C++ and validating with known table values." }
+  ],
 
   subprojects: [],
 

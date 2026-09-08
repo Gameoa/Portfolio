@@ -2,9 +2,9 @@
    SHARED RENDER LAYER
    ----------------------------------------------------------------
    Used by every page. Builds project cards, the category icons,
-   and the detail modal (including the 3D viewer and its
-   auto-detected animation buttons) so none of that logic is
-   duplicated per page.
+   and the detail modal (including the 3D viewer, the flexible
+   write-up sections, and auto-detected animation buttons) so none
+   of that logic is duplicated per page.
 ================================================================ */
 
 const ICONS = {
@@ -20,10 +20,17 @@ function iconFor(category){ return ICONS[category] || DEFAULT_ICON; }
 
 function byId(projects, id){ return projects.find(p => p.id === id); }
 
+/* Normalizes one entry of a project's "images" array. Accepts either
+   a plain path string, or an { src, caption } object — so existing
+   project files with plain strings keep working untouched. */
+function normImg(img){
+  return (typeof img === "string") ? { src: img, caption: null } : { src: img.src, caption: img.caption || null };
+}
+
 /* A project's thumbnail image: prefer the first entry in `images`,
    fall back to the older singular `image` field for compatibility. */
 function thumbSrc(p){
-  if (p.images && p.images.length) return p.images[0];
+  if (p.images && p.images.length) return normImg(p.images[0]).src;
   return p.image || null;
 }
 
@@ -43,7 +50,16 @@ function cardEl(p, index){
   const idx = String(index + 1).padStart(2, "0");
   const src = thumbSrc(p);
   const thumb = src ? `<img src="${src}" alt="${p.title}">` : iconFor(p.category);
-  const badge3d = p.model ? `<span class="badge-3d">3D</span>` : "";
+
+  // Top-right corner stack: the automatic "3D" badge (if there's a model)
+  // plus any custom badges defined on the project (awards, "featured", etc).
+  const cornerItems = [];
+  if (p.model) cornerItems.push(`<span class="badge-corner-item badge-3d">3D</span>`);
+  (p.badges || []).forEach(b => {
+    const tone = b.tone === "muted" ? "badge-muted" : "badge-accent";
+    cornerItems.push(`<span class="badge-corner-item badge-custom ${tone}">${b.text}</span>`);
+  });
+  const badgeCorner = cornerItems.length ? `<div class="badge-corner">${cornerItems.join("")}</div>` : "";
   const badgeGallery = (p.images && p.images.length > 1) ? `<span class="badge-gallery">${p.images.length} PHOTOS</span>` : "";
 
   card.innerHTML = `
@@ -51,7 +67,7 @@ function cardEl(p, index){
       <span class="card-index field-label">No. ${idx} — ${p.year}</span>
       <span class="card-index field-label">${p.category}</span>
     </div>
-    <div class="card-thumb">${thumb}${badge3d}${badgeGallery}</div>
+    <div class="card-thumb">${thumb}${badgeCorner}${badgeGallery}</div>
     <h3 class="card-title">${p.title}</h3>
     <p class="card-desc">${p.desc}</p>
     <div class="card-tags">${(p.tags || []).map(t => `<span class="tag">${t}</span>`).join("")}</div>
@@ -66,8 +82,9 @@ function cardEl(p, index){
 
 /* ---------------------------------------------------------------
    Modal — injected once per page (idempotent), reused for every
-   project. Includes the interactive 3D viewer and a "Sub-projects"
-   block when a project defines either.
+   project. Includes the interactive 3D viewer, the flexible
+   write-up sections, and a "Sub-projects" block when a project
+   defines either.
 --------------------------------------------------------------- */
 let _lastFocused = null;
 
@@ -88,9 +105,7 @@ function ensureModal(){
         <div class="media-pane" id="mediaPaneImages"></div>
         <div class="media-pane" id="mediaPaneModel"></div>
       </div>
-      <div class="modal-block"><h4>Problem</h4><p id="modalProblem"></p></div>
-      <div class="modal-block"><h4>Approach</h4><p id="modalApproach"></p></div>
-      <div class="modal-block"><h4>Result</h4><p id="modalResult"></p></div>
+      <div class="modal-sections" id="modalSections"></div>
       <div class="modal-block" id="modalSubWrap" style="display:none;">
         <h4>Sub-projects</h4>
         <div class="sub-list" id="modalSubList"></div>
@@ -110,6 +125,66 @@ function ensureModal(){
   });
 }
 
+/* ---------------------------------------------------------------
+   Write-up sections. Preferred shape is a "sections" array on the
+   project (any headings, any count). Falls back to the legacy
+   problem/approach/result fields when "sections" isn't set, so
+   older project files keep working with no changes.
+--------------------------------------------------------------- */
+function normalizeSections(p){
+  if (p.sections && p.sections.length){
+    return p.sections.map(sec => {
+      let blocks;
+      if (sec.blocks) blocks = sec.blocks;
+      else if (Array.isArray(sec.body)) blocks = sec.body.map(t => ({ text: t }));
+      else if (sec.body) blocks = [{ text: sec.body }];
+      else blocks = [];
+      return { heading: sec.heading, blocks };
+    });
+  }
+  const legacy = [];
+  if (p.problem) legacy.push({ heading: "Problem", blocks: [{ text: p.problem }] });
+  if (p.approach) legacy.push({ heading: "Approach", blocks: [{ text: p.approach }] });
+  if (p.result) legacy.push({ heading: "Result", blocks: [{ text: p.result }] });
+  return legacy;
+}
+
+function renderBlocks(container, blocks, altBase){
+  blocks.forEach(b => {
+    if (b.text !== undefined){
+      const p = document.createElement("p");
+      p.textContent = b.text;
+      container.appendChild(p);
+    } else if (b.image){
+      const fig = document.createElement("figure");
+      fig.className = "inline-figure";
+      const img = document.createElement("img");
+      img.src = b.image;
+      img.alt = b.caption || altBase;
+      fig.appendChild(img);
+      if (b.caption){
+        const cap = document.createElement("figcaption");
+        cap.textContent = b.caption;
+        fig.appendChild(cap);
+      }
+      container.appendChild(fig);
+    }
+  });
+}
+
+function buildSections(container, p){
+  container.innerHTML = "";
+  normalizeSections(p).forEach(sec => {
+    const block = document.createElement("div");
+    block.className = "modal-block";
+    const h = document.createElement("h4");
+    h.textContent = sec.heading;
+    block.appendChild(h);
+    renderBlocks(block, sec.blocks, p.title);
+    container.appendChild(block);
+  });
+}
+
 function openModal(p){
   ensureModal();
   _lastFocused = document.activeElement;
@@ -118,9 +193,8 @@ function openModal(p){
     `<span class="tag">${p.category}</span><span class="tag">${p.year}</span><span class="tag">${p.role || ""}</span>`;
   document.getElementById("modalTitle").textContent = p.title;
   document.getElementById("modalDesc").textContent = p.desc;
-  document.getElementById("modalProblem").textContent = p.problem || "";
-  document.getElementById("modalApproach").textContent = p.approach || "";
-  document.getElementById("modalResult").textContent = p.result || "";
+
+  buildSections(document.getElementById("modalSections"), p);
 
   const subWrap = document.getElementById("modalSubWrap");
   const subList = document.getElementById("modalSubList");
@@ -211,8 +285,9 @@ function _galleryStep(dir){
   g.updateFn();
 }
 
-function buildGallery(container, images, altBase){
+function buildGallery(container, rawImages, altBase){
   container.innerHTML = "";
+  const images = rawImages.map(normImg);
   const wrap = document.createElement("div");
   wrap.className = "gallery";
 
@@ -237,6 +312,10 @@ function buildGallery(container, images, altBase){
   }
   wrap.appendChild(frame);
 
+  const captionEl = document.createElement("div");
+  captionEl.className = "gallery-caption";
+  wrap.appendChild(captionEl);
+
   if (images.length > 1){
     const meta = document.createElement("div");
     meta.className = "gallery-meta";
@@ -247,11 +326,11 @@ function buildGallery(container, images, altBase){
 
     thumbsEl = document.createElement("div");
     thumbsEl.className = "gallery-thumbs";
-    images.forEach((src, i) => {
+    images.forEach((im, i) => {
       const t = document.createElement("img");
       t.className = "gallery-thumb";
-      t.src = src;
-      t.alt = altBase + " — thumbnail " + (i + 1);
+      t.src = im.src;
+      t.alt = im.caption || (altBase + " — thumbnail " + (i + 1));
       t.addEventListener("click", () => { state.index = i; update(); });
       thumbsEl.appendChild(t);
     });
@@ -262,8 +341,11 @@ function buildGallery(container, images, altBase){
 
   const state = { images, index: 0 };
   function update(){
-    img.src = state.images[state.index];
-    img.alt = altBase + " — photo " + (state.index + 1) + " of " + state.images.length;
+    const current = state.images[state.index];
+    img.src = current.src;
+    img.alt = current.caption || (altBase + " — photo " + (state.index + 1) + " of " + state.images.length);
+    captionEl.textContent = current.caption || "";
+    captionEl.style.display = current.caption ? "block" : "none";
     if (countEl) countEl.textContent = String(state.index + 1).padStart(2, "0") + " / " + String(state.images.length).padStart(2, "0");
     if (thumbsEl){
       thumbsEl.querySelectorAll(".gallery-thumb").forEach((t, i) => t.classList.toggle("active", i === state.index));

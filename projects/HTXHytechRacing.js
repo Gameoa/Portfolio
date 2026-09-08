@@ -10,13 +10,13 @@
 ================================================================ */
 
 PROJECTS.push({
-  id: "my-project",
-  title: "Project Title",
-  category: "Robotics",
-  year: 2026,
-  role: "Your Role",
-  desc: "One sentence shown on the card.",
-  tags: ["Tool", "Tool", "Tool"],
+  id: "HTXHytech",
+  title: "HTX Hytech Racing - Powertrain Team",
+  category: "FSAE",
+  year: 2025,
+  role: "Powertrain Subteam",
+  desc: "Designing AWD Independent electric powertrain and cooling for GA Tech's FSAE Electric Competition team. 2025-26 Season",
+  tags: ["FSAE", "Automotive", "Racing"],
 
   image: null,                      // deprecated single-image fallback; use "images" below instead
 
@@ -25,7 +25,9 @@ PROJECTS.push({
   //   images: ["images/a.jpg", { src: "images/b.jpg", caption: "Final assembly" }]
   // First entry is the card thumbnail. 2+ entries show a "N PHOTOS" badge
   // and prev/next + thumbnail-strip navigation.
-  images: [],
+  images: [{ src: "images/HTX/HTX_Comp1.png", caption: "HTX During endurance race at final competition" }, 
+    { src: "images/HTX/HTX_Comp2.png", caption: "HTX racing at final competition" },
+    { src: "images/HTX/HTX_Testing.png", caption: "HTX during midseason testing" }],
 
   model: null,                      // or "models/my-project.glb" for an interactive 3D viewer
 
@@ -44,19 +46,41 @@ PROJECTS.push({
   // A section's "body" can be a single string, or an array of strings
   // for multiple paragraphs. For a longer write-up with photos placed
   // inline between paragraphs, use "blocks" instead of "body":
-  //   {
-  //     heading: "Design Process",
-  //     blocks: [
-  //       { text: "First iteration used a single belt drive..." },
-  //       { image: "images/rev1.jpg", caption: "First revision, before the gearbox redesign" },
-  //       { text: "That underperformed under load, so..." }
-  //     ]
-  //   }
-  sections: [
-    { heading: "Problem", body: "What made this project hard?" },
-    { heading: "Approach", body: "What did you do about it?" },
-    { heading: "Result", body: "What was the outcome?" }
+  sections:[
+    {
+      heading: "Season Goals",
+      blocks: [
+        { text: "Improve thermal modelling for more effective cooling performance on motors and accumulator." },
+        { text: "Optimize cooling jacket for more performant and effective motors due to better temperature management." },
+        { text: "Optimize hub mass to reduce car weight and wheel inertia while maintaing stiff sealed independent gearboxes." },
+        { text: "Design tools and test equipment for quicker development and prototyping for future seasons." }
+        //{ image: "images/rev1.jpg", caption: "First revision, before the gearbox redesign" },
+        //{ text: "That underperformed under load, so..." }
+      ]
+    },
+    {
+      heading: "Competition Results",
+      blocks: [
+        { text: "Had been experiencing issues leading up to comp due to high testing volume. Was unable to find root cause during competition and voluntarily withdrew from dynamic events for safety." },
+        { text: "Passed tech inspections and placed first out of static-only teams"}
+        //{ image: "images/rev1.jpg", caption: "First revision, before the gearbox redesign" },
+        //{ text: "That underperformed under load, so..." }
+      ]
+    },
+    {
+      heading: "Disclosure",
+      blocks: [
+        { text: "Limited info available due to ongoing season and proprietary team documentation." }
+        //{ image: "images/rev1.jpg", caption: "First revision, before the gearbox redesign" },
+        //{ text: "That underperformed under load, so..." }
+      ]
+    }
   ],
+  //sections: [
+  //  { heading: "Problem", body: "What made this project hard?" },
+  //  { heading: "Approach", body: "What did you do about it?" },
+  //  { heading: "Result", body: "What was the outcome?" }
+  //],
 
   // Legacy fields — only used as a fallback if "sections" above is
   // removed/empty. Kept for compatibility with older project files.

@@ -8,11 +8,14 @@ PROJECTS.push({
   tags: ["Under Development", "C++", "SFML"],
   image: "images/PhySim/PhySim_Thumbnail.png",
   model: null,
+  badges: [{ text: "Under Dev", tone: "accent" }],
   featured: false,
 
-  problem: "Existing physics simulators and engines are hard to use and have no application for early education.",
-  approach: "Design and program an easy to use, lightweight, interactive physics simulator ideal for classroom or student use.",
-  result: "Simple collision interactions, objects, and GUI. ONGOING DEVELOPMENT.",
+  sections: [
+    { heading: "Problem", body: "Existing physics simulators and engines are hard to use and have no application for early education." },
+    { heading: "Approach", body: "Design and program an easy to use, lightweight, interactive physics simulator ideal for classroom or student use." },
+    { heading: "Result", body: "Simple collision interactions, objects, and GUI." }
+  ],
 
   subprojects: [],
 

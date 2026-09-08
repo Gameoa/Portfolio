@@ -10,13 +10,13 @@
 ================================================================ */
 
 PROJECTS.push({
-  id: "my-project",
-  title: "Project Title",
-  category: "Robotics",
-  year: 2026,
-  role: "Your Role",
-  desc: "One sentence shown on the card.",
-  tags: ["Tool", "Tool", "Tool"],
+  id: "LandRover",
+  title: "Land Rover Restoration",
+  category: "Automotive",
+  year: 2025,
+  role: "The guy doing all the work",
+  desc: "Repairing, restoring, and upgrading a 2004 Land Rover Discovery HSE7 to make a comfortable and utilitarian daily driver that can go anywhere",
+  tags: ["Ongoing", "Automotive", "Restoration"],
 
   image: null,                      // deprecated single-image fallback; use "images" below instead
 
@@ -25,7 +25,9 @@ PROJECTS.push({
   //   images: ["images/a.jpg", { src: "images/b.jpg", caption: "Final assembly" }]
   // First entry is the card thumbnail. 2+ entries show a "N PHOTOS" badge
   // and prev/next + thumbnail-strip navigation.
-  images: [],
+  images: [{ src: "images/LandRover/LandRover_Front.png", caption: "Front View, engine work being done" }, 
+    { src: "images/LandRover/LandRover_Behind.png", caption: "Rear View" },
+    { src: "images/LandRover/LandRover_Inside.png", caption: "Inside, headliner removed for sunroof repairs" }],
 
   model: null,                      // or "models/my-project.glb" for an interactive 3D viewer
 
@@ -33,7 +35,7 @@ PROJECTS.push({
   // above/below the automatic "3D" tag. tone is "accent" (bold) or "muted"
   // (outlined) — omit tone for accent.
   //   badges: [{ text: "AWARD", tone: "accent" }, { text: "FEATURED", tone: "muted" }]
-  badges: [],
+  badges: [{ text: "Ongoing", tone: "accent" }],
 
   featured: false,                  // true = shown on the homepage's featured strip
 
@@ -44,19 +46,21 @@ PROJECTS.push({
   // A section's "body" can be a single string, or an array of strings
   // for multiple paragraphs. For a longer write-up with photos placed
   // inline between paragraphs, use "blocks" instead of "body":
-  //   {
-  //     heading: "Design Process",
-  //     blocks: [
-  //       { text: "First iteration used a single belt drive..." },
-  //       { image: "images/rev1.jpg", caption: "First revision, before the gearbox redesign" },
-  //       { text: "That underperformed under load, so..." }
-  //     ]
-  //   }
-  sections: [
-    { heading: "Problem", body: "What made this project hard?" },
-    { heading: "Approach", body: "What did you do about it?" },
-    { heading: "Result", body: "What was the outcome?" }
+  sections:[
+    {
+      heading: "Design Process",
+      blocks: [
+        { text: "First iteration used a single belt drive..." },
+        { image: "images/rev1.jpg", caption: "First revision, before the gearbox redesign" },
+        { text: "That underperformed under load, so..." }
+      ]
+    }
   ],
+  //sections: [
+  //  { heading: "Problem", body: "What made this project hard?" },
+  //  { heading: "Approach", body: "What did you do about it?" },
+  //  { heading: "Result", body: "What was the outcome?" }
+  //],
 
   // Legacy fields — only used as a fallback if "sections" above is
   // removed/empty. Kept for compatibility with older project files.

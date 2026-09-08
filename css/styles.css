@@ -185,7 +185,11 @@ p{ margin:0; }
 .card-index{ color:var(--muted); }
 .card-thumb{ width:100%; aspect-ratio:16/10; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; background:var(--paper); position:relative; }
 .card-thumb svg{ width:46%; height:46%; }
-.badge-3d{ position:absolute; top:8px; right:8px; font-family:var(--mono); font-size:10px; letter-spacing:0.04em; background:var(--accent); color:var(--accent-ink); padding:3px 7px; }
+.badge-corner{ position:absolute; top:8px; right:8px; display:flex; flex-direction:column; gap:4px; align-items:flex-end; }
+.badge-corner-item{ font-family:var(--mono); font-size:10px; letter-spacing:0.04em; padding:3px 7px; }
+.badge-3d{ background:var(--accent); color:var(--accent-ink); }
+.badge-custom.badge-accent{ background:var(--accent); color:var(--accent-ink); }
+.badge-custom.badge-muted{ background:var(--paper); border:1px solid var(--line-strong); color:var(--muted); }
 .badge-gallery{ position:absolute; top:8px; left:8px; font-family:var(--mono); font-size:10px; letter-spacing:0.04em; background:var(--paper); border:1px solid var(--line-strong); color:var(--muted); padding:3px 7px; }
 .card-title{ font-size:19px; }
 .card-desc{ color:var(--muted); font-size:14.5px; }
@@ -261,6 +265,10 @@ p{ margin:0; }
 .modal-block{ margin-top:26px; }
 .modal-block h4{ font-family:var(--mono); font-size:12px; letter-spacing:0.05em; text-transform:uppercase; color:var(--muted); margin-bottom:8px; }
 .modal-block p{ font-size:15px; max-width:60ch; }
+.modal-block p + p{ margin-top:12px; }
+.inline-figure{ margin:20px 0; }
+.inline-figure img{ width:100%; border:1px solid var(--line-strong); }
+.inline-figure figcaption{ font-family:var(--mono); font-size:11px; letter-spacing:0.03em; color:var(--muted); margin-top:6px; }
 .modal-links{ margin-top:26px; display:flex; gap:12px; flex-wrap:wrap; }
 
 .sub-list{ display:flex; flex-direction:column; gap:14px; margin-top:6px; }
@@ -287,6 +295,7 @@ p{ margin:0; }
 /* Photo gallery */
 .gallery-frame{ position:relative; width:100%; aspect-ratio:16/10; background:var(--paper); overflow:hidden; }
 .gallery-img{ width:100%; height:100%; object-fit:contain; }
+.gallery-caption{ padding:10px 12px 0; font-size:13px; color:var(--muted); }
 .gallery-nav{
   position:absolute; top:50%; transform:translateY(-50%);
   width:34px; height:34px; border:1px solid var(--line-strong);

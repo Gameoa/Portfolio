@@ -18,9 +18,9 @@ PROJECTS.push({
                                      // automatically if the file has animation clips.
   featured: false,                  // true = shown on the homepage's featured strip
 
-  problem: "Make a robot constrained by provided mechatronics components, size, and time limitsthat can reliably complete several tasks to compete against other teams",
+  problem: "Make a robot constrained by provided mechatronics components, size, and time limits that can reliably complete several tasks to compete against other teams",
   approach: "Built a robot focused on reaching the center quickest and hold the most shared objects, only then performing other solo tasks to maximize potential points.",
-  result: "Placed highly in Competition rounds, ultimately losing to more reliable robots that didn't rely on complex mechanisms to quickly reach the center.",
+  result: "Placed highly in Competition rounds, ultimately losing to simpler, more reliable robots that didn't rely on complex expansion mechanisms to quickly reach the center.",
 
   // Optional. Smaller pieces of work that belong under this project.
   // Shown in this project's detail view AND flattened onto subprojects.html.

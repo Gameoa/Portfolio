@@ -24,8 +24,8 @@ window.SITE = {
   // Hero spec-readout row. Use "count" for a number that animates in
   // on load, or "text" for a short static label. Any number of entries works.
   stats: [
-    { count: 9, label: "Projects Finished" },
-    { count: 5, label: "Under Development" },
+    { count: 10, label: "Projects" },
+    { count: 4, label: "Ongoing" },
     { count: 8, label: "Years building" },
     { text: "CAD / C++", label: "Core stack" },
     { text: "OPEN TO NEW OPPORTUNITIES", label: "Status" }
@@ -33,14 +33,14 @@ window.SITE = {
 
   // About section (homepage only)
   bio: [
-    "Write two or three short paragraphs here about your background — what kind of engineer you are, what you like building, and what you're looking for next. Keep sentences plain and specific: what you've shipped, what tools you reach for, and what problem space you enjoy.",
-    "Second paragraph: mention your education, past roles, or a project that best represents how you work. Employers skim this section, so lead with the most relevant sentence."
+    "Senior Mechanical Engineering student with extensive background in mechanics and robotics. Always looking to broaden my skillset in order to become a more effective engineer. Especially focused towards integrating my mechanical knowledge with more advanced programming and especially electrical work.",
+    "Always pursuing new opportunities and projects."
   ],
-  skills: ["SolidWorks", "Fusion 360", "Autodesk Inventor", "Creo 9", "C++", "Python", "GD&T", "Design for Machining"],
+  skills: ["SolidWorks", "Fusion 360", "Autodesk Inventor", "Creo Parametric", "Catia", "C++", "Matlab", "Python", "GD&T", "3D Printing", "Design for Machining", "Design for Manufacturing"],
 
   // Contact section (homepage only)
   contactBlurb: "Always open to new opportunities. Preferred contact through email for any general questions, or career opportunities.",
-  email: "lincoln@example.com",
+  email: "lincolntatestanfield@gmail.com",
   links: [
     { label: "YouTube", url: "https://www.youtube.com/@gameoa1163" },
     { label: "GitHub", url: "https://github.com/gameoa" },
