@@ -24,8 +24,8 @@ window.SITE = {
   // Hero spec-readout row. Use "count" for a number that animates in
   // on load, or "text" for a short static label. Any number of entries works.
   stats: [
-    { count: 10, label: "Projects" },
-    { count: 4, label: "Ongoing" },
+    { count: 11, label: "Projects" },
+    { count: 5, label: "Ongoing" },
     { count: 8, label: "Years building" },
     { text: "CAD / C++", label: "Core stack" },
     { text: "OPEN TO NEW OPPORTUNITIES", label: "Status" }

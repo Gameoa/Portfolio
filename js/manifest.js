@@ -17,6 +17,7 @@ window.PROJECT_FILES = [
   "projects/ME2110Robot.js",
   "projects/HTXHytechRacing.js",
   "projects/LandRover.js",
+  "projects/MicroMotorController.js",
   "projects/PhySim.js",
   "projects/ThermoSolver.js",
   "projects/663A_TippingPoint.js",

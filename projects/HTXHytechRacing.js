@@ -35,9 +35,9 @@ PROJECTS.push({
   // above/below the automatic "3D" tag. tone is "accent" (bold) or "muted"
   // (outlined) — omit tone for accent.
   //   badges: [{ text: "AWARD", tone: "accent" }, { text: "FEATURED", tone: "muted" }]
-  badges: [],
+  badges: [{ text: "FEATURED", tone: "muted" }],
 
-  featured: false,                  // true = shown on the homepage's featured strip
+  featured: true,                  // true = shown on the homepage's featured strip
 
   // ----------------------------------------------------------------
   // WRITE-UP — use "sections" for anything beyond a simple

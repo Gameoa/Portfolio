@@ -10,13 +10,13 @@
 ================================================================ */
 
 PROJECTS.push({
-  id: "LandRover",
-  title: "Land Rover Restoration",
-  category: "Automotive",
-  year: 2025,
+  id: "MicroMotorController",
+  title: "Micro Motor Controller",
+  category: "Robotics",
+  year: 2026,
   role: "Personal Project",
-  desc: "Repairing, restoring, and upgrading a 2004 Land Rover Discovery HSE7 to make a comfortable and utilitarian daily driver that can go anywhere",
-  tags: ["Ongoing", "Automotive", "Restoration"],
+  desc: "A miniature FOC motor controller designed for small robotics applications to enable better control of brushless motors while being easily packaged.",
+  tags: ["Early Stages","Robotics", "Electronics"],
 
   image: null,                      // deprecated single-image fallback; use "images" below instead
 
@@ -25,9 +25,7 @@ PROJECTS.push({
   //   images: ["images/a.jpg", { src: "images/b.jpg", caption: "Final assembly" }]
   // First entry is the card thumbnail. 2+ entries show a "N PHOTOS" badge
   // and prev/next + thumbnail-strip navigation.
-  images: [{ src: "images/LandRover/LandRover_Front.png", caption: "Front View, engine work being done" }, 
-    { src: "images/LandRover/LandRover_Behind.png", caption: "Rear View" },
-    { src: "images/LandRover/LandRover_Inside.png", caption: "Inside, headliner removed for sunroof repairs" }],
+  images: [],
 
   model: null,                      // or "models/my-project.glb" for an interactive 3D viewer
 
@@ -35,7 +33,7 @@ PROJECTS.push({
   // above/below the automatic "3D" tag. tone is "accent" (bold) or "muted"
   // (outlined) — omit tone for accent.
   //   badges: [{ text: "AWARD", tone: "accent" }, { text: "FEATURED", tone: "muted" }]
-  badges: [{ text: "Ongoing", tone: "accent" }],
+  badges: [{ text: "Ongoing", tone: "accent" }, { text: "Early Stages", tone: "muted" }],
 
   featured: false,                  // true = shown on the homepage's featured strip
 
@@ -46,23 +44,25 @@ PROJECTS.push({
   // A section's "body" can be a single string, or an array of strings
   // for multiple paragraphs. For a longer write-up with photos placed
   // inline between paragraphs, use "blocks" instead of "body":
-  sections:[
-    { heading: "Inspiration", 
-      blocks: [
-        { text: "The Land Rover Discovery 2 stands as the ultimate expression of rugged utility and passenger comfort. For better or worse, Land Rover engineers asked themselves 2 questions: `What all can a car do?` and 'How comfortable can it be doing it?' then said yes to every idea presented."},
-        { text: "The result is a 3.5 ton SUV with a 4.6L V8, AWD, rear air suspension, dual sunroofs, dual AC, 7 passenger capacity, and countless other features. A testament to engineering capability, yet a nightmare to maintain."},
-        { text: "The goal of this project is to restore and upgrade the highest trim HSE7 model of the Discovery 2 to make it a comfortable, capable, and importantly more reliable daily driver."}
-      ] 
-    },
-    { heading: "Current Progress",
-      blocks: [
-        { text: "Headliner removed to access sunroofs, which are being repaired and upgraded for a more robust design."},
-        { text: "MAF Sensor replaced to fix random downshifting and power loss problems."},
-        { text: "Cooling loop redone to prevent potential overheating. Rerouting coolant line and replacing thermostat housing for one without radiator bypass."},
-        { text: "Adding sound insulation to inside roof to reduce noise and improve temperature control."}
-      ]
-    }
+  //   {
+  //     heading: "Design Process",
+  //     blocks: [
+  //       { text: "First iteration used a single belt drive..." },
+  //       { image: "images/rev1.jpg", caption: "First revision, before the gearbox redesign" },
+  //       { text: "That underperformed under load, so..." }
+  //     ]
+  //   }
+  sections: [
+    { heading: "Early Stages", body: "This project is in early stages of development. Most work consists of research, part and tool procurement, software selection, and final design strategy." },
+    { heading: "Current Progress", body: "Procured small brushless motors as well as out of the box controller solutions for testing and gaining familiarity with industry standards. Researching and analyzing open source controllers to understand important aspects of motor controller designs. Selecting circuit components for high frequency operation and compact size."},
+    { heading: "Design Goals", body: "Primary goal is to make a compact motor controller that can precisely control small brushless motors with either sensored or, (where applicable) sensorless FOC. The controller should be able to handle a variety of small motors and be easily tuned for each."}
   ],
+
+  // Legacy fields — only used as a fallback if "sections" above is
+  // removed/empty. Kept for compatibility with older project files.
+  // problem: "...",
+  // approach: "...",
+  // result: "...",
 
   // Optional. Smaller pieces of work that belong under this project.
   // Shown in this project's detail view AND flattened onto subprojects.html.
